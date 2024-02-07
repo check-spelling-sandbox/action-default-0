@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: test with default
+        uses: ./
+
+      - name: test with value
+        uses: ./
+        with:
+          test: 10
+
+      - name: test with no value
+        uses: ./
+        with:
+          test: ""
