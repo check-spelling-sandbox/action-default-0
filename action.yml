@@ -1,0 +1,15 @@
+name: test
+inputs:
+  test:
+    description: test defaults
+    default: 2
+
+runs:
+  using: composite
+  steps:
+  - name: test
+    shell: bash
+    env:
+      test: ${{ inputs.test }}
+    run: |
+      echo "test: [$test]"
