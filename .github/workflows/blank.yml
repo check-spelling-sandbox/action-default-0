@@ -17,7 +17,7 @@ jobs:
         with:
           test: 10
 
-      - name: test with no value
+      - name: test with possibly no value
         uses: ./
         with:
-          test: ""
+          test: "${{ vars.something }}"
