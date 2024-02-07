@@ -12,4 +12,4 @@ runs:
     env:
       test: ${{ inputs.test }}
     run: |
-      echo "test: [$test]"
+      echo "test: [$test]" | tee -a "$GITHUB_STEP_SUMMARY"
